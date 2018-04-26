@@ -3,11 +3,10 @@
 
 
 ## Usage
-
+----
 Create and update metrics:
 
-```
-
+```go
 c := metrics.NewCounter()
 metrics.Register("foo", c)
 c.Inc(47)
@@ -30,11 +29,10 @@ metrics.Register("bang", t)
 t.Time(func() {})
 t.Update(47)
 
-
 ```
 
 Periodically report every metric to open falcon.
-```
+```go
 import falconmetrics "github.com/g4zhuj/go-metrics-falcon"
 
 go falconmetrics.ReportRegistry(metrics.DefaultRegistry)
