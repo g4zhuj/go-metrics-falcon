@@ -37,3 +37,17 @@ import falconmetrics "github.com/g4zhuj/go-metrics-falcon"
 
 go falconmetrics.ReportRegistry(metrics.DefaultRegistry)
 ```
+
+Json of open falcon
+
+```json
+{
+	"endpoint": "danale-pc",
+	"metric": "$name",
+	"value": 2.2,
+	"step": 60,
+	"counterType": "GAUGE",
+	"tags": "project=$projectName,metricType=meter,valueType=ratemean",
+	"timestamp": 1524724608
+}
+```
