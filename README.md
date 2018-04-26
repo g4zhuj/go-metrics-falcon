@@ -42,7 +42,7 @@ Json of open falcon
 
 ```json
 {
-	"endpoint": "danale-pc",
+	"endpoint": "$endpoint",
 	"metric": "$name",
 	"value": 2.2,
 	"step": 60,
