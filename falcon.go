@@ -54,17 +54,16 @@ func ReportRegistry(r gometrics.Registry) {
 }
 
 func (f *Falcon) post(ms []*FalconMetric) error {
-	for _, m := range ms {
-		mb, err := json.Marshal(m)
-		if err != nil {
-			return err
-		}
-		bodyReader := bytes.NewBuffer(mb)
-		_, err = http.Post(f.cfg.HostName, "application/json", bodyReader)
-		if err != nil {
-			return err
-		}
+	mb, err := json.Marshal(ms)
+	if err != nil {
+		return err
 	}
+	bodyReader := bytes.NewBuffer(mb)
+	_, err = http.Post(f.cfg.HostName, "application/json", bodyReader)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 
